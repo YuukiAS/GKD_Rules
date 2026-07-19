@@ -1,7 +1,7 @@
 {
   "id": 910719,
-  "name": "YuukiAS JD/Meituan rules",
-  "version": 18,
+  "name": "YuukiAS的GKD订阅",
+  "version": 19,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
