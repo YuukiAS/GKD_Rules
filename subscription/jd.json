@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS JD/Meituan rules",
-  "version": 17,
+  "version": 18,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -119,7 +119,7 @@
         },
         {
           "key": 102,
-          "name": "[mrlctate] 权限提示-通知权限",
+          "name": "[mrlctate+Lin-arm] 权限提示-通知权限",
           "desc": "点击关闭",
           "fastQuery": true,
           "actionMaximum": 1,
@@ -248,7 +248,7 @@
         },
         {
           "key": 105,
-          "name": "[mrlctate] 功能类-京东账号登录授权",
+          "name": "[mrlctate+ganlinte] 功能类-京东账号登录授权",
           "desc": "自动点击\"确认登录\"",
           "activityIds": "com.jingdong.app.mall.WebActivity",
           "rules": "[text=\"京东登录\"] > [desc=\"确认登录\"]",
@@ -257,7 +257,7 @@
         },
         {
           "key": 106,
-          "name": "[mrlctate] 局部广告-支付页面产品推荐",
+          "name": "[mrlctate+ganlinte+Lin-arm] 局部广告-支付页面产品推荐",
           "desc": "自动点击右上角\"x\"",
           "activityIds": "com.jd.lib.settlement.fillorder.activity.NewFillOrderActivity",
           "rules": "ImageView[clickable=true && desc=\"关闭\"]",
@@ -266,7 +266,7 @@
         },
         {
           "key": 107,
-          "name": "[mrlctate] 全屏广告-购物车页面支付成功弹窗广告",
+          "name": "[mrlctate+ganlinte] 全屏广告-购物车页面支付成功弹窗广告",
           "desc": "自动点击正下方的\"x\"",
           "fastQuery": true,
           "rules": [
@@ -308,7 +308,7 @@
         },
         {
           "key": 110,
-          "name": "[mrlctate] 功能类-支付订单后跳过开通[刷脸支付]",
+          "name": "[mrlctate+Lin-arm] 功能类-支付订单后跳过开通[刷脸支付]",
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "activity",
@@ -458,38 +458,6 @@
           ]
         },
         {
-          "enable": false,
-          "key": 118,
-          "name": "[ganlinte] 功能类-京东账号登录授权",
-          "desc": "自动点击【确认登录】",
-          "activityIds": "com.jingdong.app.mall.WebActivity",
-          "rules": "[text=\"京东登录\"] > [desc=\"确认登录\"]",
-          "snapshotUrls": "https://i.gkd.li/import/12901734"
-        },
-        {
-          "enable": false,
-          "key": 119,
-          "name": "[ganlinte] 全屏广告-支付界面-产品推荐",
-          "desc": "自动点击右上角【x】",
-          "activityIds": "com.jd.lib.settlement.fillorder.activity.NewFillOrderActivity",
-          "rules": "ImageView[clickable=true && desc=\"关闭\"]",
-          "snapshotUrls": "https://i.gkd.li/import/13191146"
-        },
-        {
-          "enable": false,
-          "key": 120,
-          "name": "[ganlinte] 全屏广告-购物车界面-支付成功广告弹窗",
-          "desc": "自动点击正下方的【x】",
-          "fastQuery": true,
-          "rules": [
-            {
-              "activityIds": "com.jd.lib.cart.ShoppingCartNewActivity",
-              "matches": "@ImageView - ViewGroup >2 TextView[text=\"查看订单\"]",
-              "snapshotUrls": "https://i.gkd.li/import/13446362"
-            }
-          ]
-        },
-        {
           "key": 121,
           "name": "[Lin-arm] 开屏广告",
           "matchTime": 10000,
@@ -560,37 +528,6 @@
                 "https://i.gkd.li/i/12837870",
                 "https://i.gkd.li/i/15077913"
               ]
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 124,
-          "name": "[Lin-arm] 权限提示-通知权限",
-          "desc": "点击关闭",
-          "fastQuery": true,
-          "actionMaximum": 1,
-          "resetMatch": "app",
-          "rules": [
-            {
-              "key": 0,
-              "activityIds": [
-                ".MainFrameActivity",
-                "com.jd.lib.message.messagecenter"
-              ],
-              "matches": "@ImageView[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true] -n [text=\"开启消息通知\"]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/13917163",
-                "https://i.gkd.li/i/13463618",
-                "https://i.gkd.li/i/14692570",
-                "https://i.gkd.li/i/18060234"
-              ]
-            },
-            {
-              "key": 1,
-              "activityIds": "com.jd.lib.message.messagecenter",
-              "matches": "@[clickable=true] + [text^=\"打开系统通知\"]",
-              "snapshotUrls": "https://i.gkd.li/i/12839865"
             }
           ],
           "enable": false
@@ -705,15 +642,6 @@
           "enable": false
         },
         {
-          "key": 128,
-          "name": "[Lin-arm] 局部广告-支付页面产品推荐",
-          "desc": "自动点击右上角\"x\"",
-          "activityIds": "com.jd.lib.settlement.fillorder.activity.NewFillOrderActivity",
-          "rules": "ImageView[clickable=true && desc=\"关闭\"]",
-          "snapshotUrls": "https://i.gkd.li/i/13191146",
-          "enable": false
-        },
-        {
           "key": 129,
           "name": "[Lin-arm] 全屏广告-购物车页面支付成功弹窗广告",
           "desc": "自动点击正下方的\"x\"",
@@ -757,24 +685,6 @@
                 "https://e.gkd.li/ab886df0-2b34-4804-be7d-742a06fadda9",
                 "https://e.gkd.li/6c5466d4-3238-43b7-8cf5-312f8c8606ef"
               ]
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 132,
-          "name": "[Lin-arm] 功能类-支付订单后跳过开通[刷脸支付]",
-          "matchTime": 10000,
-          "actionMaximum": 1,
-          "resetMatch": "activity",
-          "rules": [
-            {
-              "fastQuery": true,
-              "activityIds": "com.wangyin.payment.jdpaysdk.counter.ui.pay.CounterActivity",
-              "action": "back",
-              "matches": "[text=\"开启刷脸支付\"][visibleToUser=true]",
-              "exampleUrls": "https://e.gkd.li/bad5489e-0ec6-4039-8e4e-52b4b444f019",
-              "snapshotUrls": "https://i.gkd.li/i/20709175"
             }
           ],
           "enable": false
@@ -981,7 +891,7 @@
         },
         {
           "key": 104,
-          "name": "[mrlctate] 权限提示-通知权限",
+          "name": "[mrlctate+Lin-arm] 权限提示-通知权限",
           "desc": "点击跳过",
           "fastQuery": true,
           "matchTime": 10000,
@@ -1063,7 +973,7 @@
         },
         {
           "key": 108,
-          "name": "[mrlctate] 局部广告-直播讲解悬浮窗",
+          "name": "[mrlctate+Lin-arm] 局部广告-直播讲解悬浮窗",
           "desc": "点击关闭",
           "rules": [
             {
@@ -1461,26 +1371,6 @@
           "enable": false
         },
         {
-          "key": 123,
-          "name": "[Lin-arm] 权限提示-通知权限",
-          "desc": "点击跳过",
-          "fastQuery": true,
-          "matchTime": 10000,
-          "actionMaximum": 1,
-          "resetMatch": "app",
-          "rules": [
-            {
-              "activityIds": "com.meituan.android.pt.homepage.activity.MainActivity",
-              "matches": "@[vid=\"iv_close\" || text=\"跳过\"] -(1,2) [text^=\"开启通知\"]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/13439134",
-                "https://i.gkd.li/i/15047918"
-              ]
-            }
-          ],
-          "enable": false
-        },
-        {
           "key": 124,
           "name": "[Lin-arm] 全屏广告-新人返场特惠",
           "desc": "点击左上角返回",
@@ -1541,21 +1431,6 @@
                 "https://i.gkd.li/i/14392284",
                 "https://i.gkd.li/i/26628762"
               ]
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 127,
-          "name": "[Lin-arm] 局部广告-直播讲解悬浮窗",
-          "desc": "点击关闭",
-          "rules": [
-            {
-              "fastQuery": true,
-              "activityIds": "com.sankuai.waimai.business.restaurant.poicontainer.WMRestaurantActivity",
-              "matches": "@ImageView[clickable=true][visibleToUser=true] + [text=\"正在讲解\"]",
-              "exampleUrls": "https://e.gkd.li/42b1d2c5-ca75-4a89-adca-9e5c4f489165",
-              "snapshotUrls": "https://i.gkd.li/i/17182888"
             }
           ],
           "enable": false
