@@ -1,0 +1,76 @@
+{
+  "id": 910719,
+  "name": "YuukiAS JD rules",
+  "version": 16,
+  "author": "YuukiAS",
+  "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
+  "globalGroups": [],
+  "categories": [],
+  "apps": [
+    {
+      "id": "com.jingdong.app.mall",
+      "name": "JD",
+      "groups": [
+        {
+          "key": 1,
+          "name": "JD product floating video lower try-icon",
+          "desc": "Close the product-page floating video only when the lower try-icon anchor is present; top try-icon main-video shapes are ignored.",
+          "enable": true,
+          "fastQuery": true,
+          "matchDelay": 2000,
+          "matchTime": 15000,
+          "resetMatch": "activity",
+          "actionMaximum": 2,
+          "activityIds": [
+            "com.jd.lib.productdetail.ProductDetailActivity",
+            ".lib.productdetail.ProductDetailActivity"
+          ],
+          "rules": [
+            {
+              "key": 1,
+              "actionCd": 3500,
+              "position": {
+                "left": "371",
+                "top": "-1163"
+              },
+              "matches": [
+                "[vid=\"lib_pd_mainimage_try_read_icon\"][visibleToUser=true][left > 900 && top > 1500 && top < 1750 && right < 1420 && width > 250 && height > 80]"
+              ]
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "JD product floating video label-only",
+          "desc": "Close the product-page floating video when only the right-top floating label is exposed; pages that also expose a try-icon are ignored.",
+          "enable": true,
+          "fastQuery": true,
+          "matchDelay": 2000,
+          "matchTime": 15000,
+          "resetMatch": "activity",
+          "actionMaximum": 2,
+          "activityIds": [
+            "com.jd.lib.productdetail.ProductDetailActivity",
+            ".lib.productdetail.ProductDetailActivity"
+          ],
+          "rules": [
+            {
+              "key": 1,
+              "actionCd": 3500,
+              "position": {
+                "left": "392",
+                "top": "54"
+              },
+              "matches": [
+                "[vid=\"lib_pd_mainimage_label\"][visibleToUser=true][left > 900 && top > 250 && top < 650 && right >= 1400 && width > 250 && height > 180]"
+              ],
+              "excludeMatches": [
+                "[vid=\"lib_pd_mainimage_try_read_icon\"][visibleToUser=true][left > 900 && top > 1000 && right < 1420 && width > 250 && height > 80]"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
