@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 20,
+  "version": 21,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -71,53 +71,6 @@
           ]
         },
         {
-          "key": 100,
-          "name": "局部广告-购物车页面砸金蛋",
-          "desc": "点击关闭",
-          "rules": [
-            {
-              "fastQuery": true,
-              "activityIds": "com.jingdong.app.mall.MainFrameActivity",
-              "matches": "[id=\"com.jd.lib.cart.feature:id/iv_egg_close\"]",
-              "snapshotUrls": "https://i.gkd.li/i/14731003"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 101,
-          "name": "局部广告-悬浮广告",
-          "activityIds": "com.jingdong.app.mall.MainFrameActivity",
-          "rules": [
-            {
-              "key": 0,
-              "matches": "FrameLayout + RelativeLayout > RelativeLayout > ImageView + ImageView[desc=null][visibleToUser=true]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/12642270",
-                "https://i.gkd.li/i/12774910"
-              ],
-              "excludeSnapshotUrls": "https://i.gkd.li/i/15110548"
-            },
-            {
-              "key": 1,
-              "matches": "@ImageView[id!=null] + FrameLayout[childCount=3] > ImageView + LinearLayout + TextView",
-              "snapshotUrls": "https://i.gkd.li/i/13242002"
-            },
-            {
-              "key": 2,
-              "matches": "[desc=\"关闭浮层icon\"][clickable=true][visibleToUser=true]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/13165659",
-                "https://i.gkd.li/i/12837870",
-                "https://i.gkd.li/i/13072091",
-                "https://i.gkd.li/i/12837870",
-                "https://i.gkd.li/i/15077913"
-              ]
-            }
-          ],
-          "enable": false
-        },
-        {
           "key": 102,
           "name": "权限提示-通知权限",
           "desc": "点击关闭",
@@ -149,161 +102,12 @@
           "enable": false
         },
         {
-          "key": 103,
-          "name": "全屏广告-弹窗广告",
-          "rules": [
-            {
-              "key": 0,
-              "activityIds": "com.jingdong.app.mall.MainFrameActivity",
-              "matches": "@FrameLayout[clickable=true] > [desc=\"关闭\"]",
-              "excludeMatches": "[text=\"确定\" || text=\"加入购物车\" || text*=\"购买\" || text*=\"下单\"][visibleToUser=true]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/13165721",
-                "https://i.gkd.li/i/15364514"
-              ],
-              "excludeSnapshotUrls": "https://i.gkd.li/i/18455760"
-            },
-            {
-              "key": 1,
-              "fastQuery": true,
-              "activityIds": [
-                "com.jd.lib.cashier.complete.view.CashierCompleteActivity",
-                "com.jd.lib.jshop.jshop.JshopMainShopActivity"
-              ],
-              "matches": "[vid=\"close\"][desc=\"关闭页面\"]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/13218034",
-                "https://i.gkd.li/i/14927060"
-              ]
-            },
-            {
-              "key": 2,
-              "fastQuery": true,
-              "activityIds": [
-                "com.jingdong.app.mall.MainFrameActivity",
-                "com.jd.lib.jshop.jshop.JshopMainShopActivity"
-              ],
-              "excludeMatches": [
-                "ImageView[desc=\"关闭页面\"] - [text=\"优惠券\"]",
-                "TextView[text=\"退换/售后\"][id=null]"
-              ],
-              "matches": "[desc=\"关闭页面\" || desc=\"关闭按钮\"][clickable=true][visibleToUser=true]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/13241883",
-                "https://i.gkd.li/i/13258996",
-                "https://i.gkd.li/i/13336847",
-                "https://i.gkd.li/i/15416926",
-                "https://i.gkd.li/i/15862131",
-                "https://i.gkd.li/i/16818580"
-              ]
-            },
-            {
-              "key": 3,
-              "fastQuery": true,
-              "matchTime": 10000,
-              "actionMaximum": 1,
-              "resetMatch": "app",
-              "action": "back",
-              "activityIds": ".MainFrameActivity",
-              "matches": "[text^=\"惊喜福利来袭\"][visibleToUser=true]",
-              "exampleUrls": "https://e.gkd.li/580d3cb5-503e-47a9-ba88-056e91c2f084",
-              "snapshotUrls": "https://i.gkd.li/i/17974166"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 104,
-          "name": "局部广告-横幅广告",
-          "activityIds": "com.jingdong.app.mall.MainFrameActivity",
-          "rules": [
-            {
-              "key": 0,
-              "matches": "ImageView < FrameLayout - FrameLayout > ImageView[desc=\"关闭\"]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/13258973",
-                "https://i.gkd.li/i/13258980",
-                "https://i.gkd.li/i/13258981"
-              ]
-            },
-            {
-              "key": 1,
-              "fastQuery": true,
-              "matches": "@ViewGroup[clickable=true] - * > [text=\"去续费\"]",
-              "snapshotUrls": "https://i.gkd.li/i/15047238"
-            },
-            {
-              "key": 2,
-              "matches": "[desc=\"吸顶楼层\"] > [desc=\"关闭按钮\"][clickable=true][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/15112953"
-            },
-            {
-              "key": 3,
-              "fastQuery": true,
-              "matches": "[id=\"com.jd.lib.cart.feature:id/plus_close\"]",
-              "snapshotUrls": "https://i.gkd.li/i/15229577"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 105,
-          "name": "功能类-京东账号登录授权",
-          "desc": "自动点击\"确认登录\"",
-          "activityIds": "com.jingdong.app.mall.WebActivity",
-          "rules": "[text=\"京东登录\"] > [desc=\"确认登录\"]",
-          "snapshotUrls": "https://i.gkd.li/i/12901734",
-          "enable": false
-        },
-        {
           "key": 106,
           "name": "局部广告-支付页面产品推荐",
           "desc": "自动点击右上角\"x\"",
           "activityIds": "com.jd.lib.settlement.fillorder.activity.NewFillOrderActivity",
           "rules": "ImageView[clickable=true && desc=\"关闭\"]",
           "snapshotUrls": "https://i.gkd.li/i/13191146",
-          "enable": false
-        },
-        {
-          "key": 107,
-          "name": "全屏广告-购物车页面支付成功弹窗广告",
-          "desc": "自动点击正下方的\"x\"",
-          "fastQuery": true,
-          "rules": [
-            {
-              "activityIds": "com.jd.lib.cart.ShoppingCartNewActivity",
-              "matches": "@ImageView - ViewGroup >2 TextView[text=\"查看订单\"]",
-              "snapshotUrls": "https://i.gkd.li/i/13446362"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 108,
-          "name": "全屏广告-加入购物车后出现的弹窗",
-          "desc": "点击[继续逛]",
-          "rules": [
-            {
-              "fastQuery": true,
-              "activityIds": "com.jd.lib.productdetail.ProductDetailActivity",
-              "matches": "[text=\"继续逛\"]",
-              "snapshotUrls": "https://i.gkd.li/i/15047243"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 109,
-          "name": "功能类-支付订单后点击[完成]",
-          "rules": [
-            {
-              "fastQuery": true,
-              "activityIds": ".bundle.cashierfinish.view.CashierUserContentCompleteActivity",
-              "matches": "[vid=\"lib_cashier_finish_back_page_text\"]",
-              "exampleUrls": "https://e.gkd.li/ab886df0-2b34-4804-be7d-742a06fadda9",
-              "snapshotUrls": "https://i.gkd.li/i/17358003"
-            }
-          ],
           "enable": false
         },
         {
@@ -323,14 +127,6 @@
             }
           ],
           "enable": false
-        },
-        {
-          "enable": false,
-          "key": 111,
-          "name": "全屏广告-购物车界面-砸金蛋",
-          "activityIds": "com.jingdong.app.mall.MainFrameActivity",
-          "rules": "[id=\"com.jd.lib.cart.feature:id/iv_egg_close\"]",
-          "snapshotUrls": "https://i.gkd.li/import/12642266"
         },
         {
           "enable": false,
@@ -393,57 +189,6 @@
           ]
         },
         {
-          "key": 115,
-          "name": "全屏广告-广告弹窗",
-          "rules": [
-            {
-              "key": 0,
-              "activityIds": "com.jingdong.app.mall.MainFrameActivity",
-              "matches": "FrameLayout > [desc=\"关闭\"]",
-              "snapshotUrls": "https://i.gkd.li/import/13165721"
-            },
-            {
-              "key": 1,
-              "activityIds": "com.jd.lib.cashier.complete.view.CashierCompleteActivity",
-              "matches": "[id=\"com.jingdong.app.mall:id/webview\"] + [id=\"com.jingdong.app.mall:id/close\"][desc=\"关闭页面\"]",
-              "snapshotUrls": "https://i.gkd.li/import/13218034"
-            },
-            {
-              "key": 2,
-              "activityIds": "com.jingdong.app.mall.MainFrameActivity",
-              "matches": "@[desc=\"关闭按钮\"] <n * >n *[desc=\"弹窗\"]",
-              "snapshotUrls": [
-                "https://i.gkd.li/import/13241883",
-                "https://i.gkd.li/import/132599029"
-              ]
-            },
-            {
-              "key": 3,
-              "fastQuery": true,
-              "activityIds": "com.jingdong.app.mall.MainFrameActivity",
-              "matches": "RelativeLayout > ImageView[desc=\"关闭页面\"]",
-              "excludeMatches": "ImageView[desc=\"关闭页面\"] - [text=\"优惠券\"]",
-              "snapshotUrls": [
-                "https://i.gkd.li/import/13258996",
-                "https://i.gkd.li/import/13336847"
-              ]
-            }
-          ],
-          "enable": false
-        },
-        {
-          "enable": false,
-          "key": 116,
-          "name": "局部广告-首页-底部横幅广告",
-          "activityIds": "com.jingdong.app.mall.MainFrameActivity",
-          "rules": "ImageView < FrameLayout - FrameLayout > ImageView[desc=\"关闭\"]",
-          "snapshotUrls": [
-            "https://i.gkd.li/import/13258973",
-            "https://i.gkd.li/import/13258980",
-            "https://i.gkd.li/import/13258981"
-          ]
-        },
-        {
           "enable": false,
           "key": 117,
           "name": "全屏广告-首页弹窗-打开通知",
@@ -471,14 +216,10 @@
               "fastQuery": true,
               "excludeActivityIds": "com.jd.lib.search.view.Activity.SearchActivity",
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/16323111",
-              "excludeSnapshotUrls": "https://i.gkd.li/i/16323115"
-            },
-            {
-              "key": 1,
-              "excludeActivityIds": "com.jd.lib.search.view.Activity.SearchActivity",
-              "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/17602356",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/16323111",
+                "https://i.gkd.li/i/17602356"
+              ],
               "excludeSnapshotUrls": "https://i.gkd.li/i/16323115"
             }
           ],
@@ -735,161 +476,6 @@
       "name": "美团",
       "groups": [
         {
-          "key": 100,
-          "name": "全屏广告-弹窗广告",
-          "rules": [
-            {
-              "key": 0,
-              "name": "美团买菜-折扣弹窗",
-              "activityIds": "com.meituan.retail.c.android.mrn.mrn.MallMrnModal",
-              "matches": "ViewGroup > ViewGroup[childCount=6] > ViewGroup[childCount=1] > ImageView[childCount=0][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/12639717"
-            },
-            {
-              "key": 1,
-              "name": "美团买菜-红包弹窗",
-              "activityIds": "com.meituan.retail.c.android.mrn.mrn.MallMrnModal",
-              "matches": "@ImageView < ViewGroup +3 ViewGroup > ViewGroup > TextView[text^=\"红包已到账\"]",
-              "snapshotUrls": "https://i.gkd.li/i/12892626"
-            },
-            {
-              "key": 2,
-              "name": "美团买菜-支付成功后-红包弹窗",
-              "activityIds": "com.meituan.retail.c.android.mrn.mrn.MallMrnModal",
-              "matches": "TextView[text=\"恭喜你获得以下权益\"] + ViewGroup > ImageView",
-              "snapshotUrls": "https://i.gkd.li/i/12646768"
-            },
-            {
-              "key": 3,
-              "name": "超市便利-弹窗广告",
-              "fastQuery": true,
-              "activityIds": "com.sankuai.waimai.store.poi.list.newp.PoiVerticalityHomeActivity",
-              "matches": "@ImageView[childCount=0][clickable=true][visibleToUser=true] < FrameLayout[childCount=1] <2 FrameLayout[childCount=2] < FrameLayout[childCount=1] < FrameLayout[childCount=1] < FrameLayout[childCount=1] < FrameLayout[childCount=1] < [id=\"android:id/content\"]",
-              "snapshotUrls": "https://i.gkd.li/i/13694877"
-            },
-            {
-              "key": 4,
-              "name": "骑行卡-红包弹窗",
-              "activityIds": "com.meituan.mmp.lib.HeraActivity",
-              "matches": "View[childCount=3] > View + TextView + TextView[text=\"\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/12739204"
-            },
-            {
-              "key": 5,
-              "name": "订单完成后的红包弹窗",
-              "fastQuery": true,
-              "activityIds": "com.sankuai.waimai.bussiness.order.detail.WMOrderDetailActivity",
-              "matches": "@ImageView[clickable=true] - * >3 [text=\"开心收下\"]",
-              "snapshotUrls": "https://i.gkd.li/i/13695703"
-            },
-            {
-              "key": 6,
-              "name": "邀请好友提现弹窗",
-              "activityIds": "com.meituan.msc.modules.container.MSCActivity",
-              "matches": "WebView > View > View[childCount=1] >(1,2) View[childCount=2] > View + Image[text=\"\"][childCount=0][left>0]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/14964911",
-                "https://i.gkd.li/i/15400951",
-                "https://i.gkd.li/i/16487898"
-              ]
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 101,
-          "name": "评价提示-订单调查弹窗",
-          "fastQuery": true,
-          "actionMaximum": 1,
-          "resetMatch": "app",
-          "rules": [
-            {
-              "key": 1,
-              "name": "我的页面-小调查",
-              "action": "back",
-              "activityIds": "com.meituan.retail.c.android.mrn.mrn.MallMrnModal",
-              "matches": "TextView[text=\"小调查\"]",
-              "snapshotUrls": "https://i.gkd.li/i/12639723"
-            },
-            {
-              "key": 2,
-              "name": "订单详情页匿名调查",
-              "action": "back",
-              "activityIds": "com.sankuai.waimai.bussiness.order.detail.WMOrderDetailActivity",
-              "matches": "[id=\"com.sankuai.meituan:id/questionnaireTitle\"]",
-              "snapshotUrls": "https://i.gkd.li/i/13682336"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 102,
-          "name": "局部广告-悬浮广告",
-          "rules": [
-            {
-              "key": 0,
-              "activityIds": [
-                "com.meituan.android.pt.homepage.activity.MainActivity",
-                "com.miui.home.launcher.Launcher"
-              ],
-              "matches": "FrameLayout > @ImageView + ImageView[desc=\"资质与规则\"]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/12639815",
-                "https://i.gkd.li/i/12639734"
-              ]
-            },
-            {
-              "key": 1,
-              "fastQuery": true,
-              "activityIds": "com.sankuai.waimai.business.page.homepage.TakeoutActivity",
-              "matches": "[vid=\"marking_sidebar_close\"]",
-              "snapshotUrls": "https://i.gkd.li/i/16079638"
-            },
-            {
-              "key": 2,
-              "fastQuery": true,
-              "activityIds": "com.sankuai.waimai.business.restaurant.poicontainer.WMRestaurantActivity",
-              "matches": "@ImageView[visibleToUser=true] - [text^=\"收藏店铺领\"]",
-              "exampleUrls": "https://e.gkd.li/20bbae61-859b-478d-9032-8213c79dec39",
-              "snapshotUrls": "https://i.gkd.li/i/16632959"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 103,
-          "name": "权限提示-定位权限",
-          "desc": "首页/外卖界面-\"打开位置开关弹窗\"-点击右侧x关闭",
-          "actionMaximum": 1,
-          "resetMatch": "app",
-          "actionMaximumKey": 0,
-          "rules": [
-            {
-              "key": 0,
-              "fastQuery": true,
-              "activityIds": "com.meituan.android.pt.homepage.activity.MainActivity",
-              "matches": "[vid=\"location_close\"]",
-              "exampleUrls": "https://m.gkd.li/57941037/da856996-b128-486a-a6d4-964183b0c719",
-              "snapshotUrls": "https://i.gkd.li/i/14472663"
-            },
-            {
-              "key": 1,
-              "activityIds": "com.sankuai.waimai.business.page.homepage.TakeoutActivity",
-              "matches": "[id=\"com.sankuai.meituan:id/location_layer_close\"]",
-              "exampleUrls": "https://m.gkd.li/57941037/3071d3a4-f8ca-4c6f-8aa2-cf9573dbed3d",
-              "snapshotUrls": "https://i.gkd.li/i/12910211"
-            },
-            {
-              "key": 2,
-              "activityIds": "com.sankuai.meituan.MPMainActivity",
-              "matches": "[text=\"定位服务尚未开启\"] +3 TextView",
-              "exampleUrls": "https://m.gkd.li/57941037/3bb08a42-5d88-4f9d-8cbe-cb913e136ec6",
-              "snapshotUrls": "https://i.gkd.li/i/14472614"
-            }
-          ],
-          "enable": false
-        },
-        {
           "key": 104,
           "name": "权限提示-通知权限",
           "desc": "点击跳过",
@@ -905,68 +491,6 @@
                 "https://i.gkd.li/i/13439134",
                 "https://i.gkd.li/i/15047918"
               ]
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 105,
-          "name": "全屏广告-新人返场特惠",
-          "desc": "点击左上角返回",
-          "rules": [
-            {
-              "matchTime": 10000,
-              "activityIds": "com.meituan.android.base.knb.KNBWebViewActivity",
-              "matches": "[id=\"shareNav\"] > [text=\"\"]",
-              "snapshotUrls": "https://i.gkd.li/i/13800691"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 106,
-          "name": "全屏广告-视频页弹窗广告",
-          "desc": "点击X",
-          "rules": [
-            {
-              "key": 0,
-              "name": "签到弹窗",
-              "activityIds": "com.meituan.android.pt.homepage.activity.MainActivity",
-              "matches": "ViewGroup[childCount=17] > ImageView[index=5]",
-              "snapshotUrls": "https://i.gkd.li/i/14033982"
-            },
-            {
-              "key": 1,
-              "name": "看视频领现金弹窗",
-              "activityIds": "com.meituan.android.pt.homepage.activity.MainActivity",
-              "matches": "@ImageView[visibleToUser=true] - ViewGroup[childCount=3] [text=\"看视频继续领现金\"]",
-              "snapshotUrls": "https://i.gkd.li/i/14034073"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 107,
-          "name": "功能类-付款后自动点击完成",
-          "fastQuery": true,
-          "rules": [
-            {
-              "key": 0,
-              "activityIds": "com.sankuai.waimai.platform.machpro.container.WMMPActivity",
-              "matches": [
-                "[text=\"商家已接单\" || text=\"等待商家接单\"][visibleToUser=true]",
-                "[text=\"完成\"][visibleToUser=true]"
-              ],
-              "snapshotUrls": [
-                "https://i.gkd.li/i/14163717",
-                "https://i.gkd.li/i/17158063"
-              ]
-            },
-            {
-              "key": 1,
-              "activityIds": "com.meituan.android.hybridcashier.HybridCashierActivity",
-              "matches": "[text=\"支付成功\"] >5 @[clickable=true][text=\"完成\"] <<n [vid=\"mil_container\"]",
-              "snapshotUrls": "https://i.gkd.li/i/14392284"
             }
           ],
           "enable": false
@@ -1007,105 +531,6 @@
           "enable": false
         },
         {
-          "key": 110,
-          "name": "全屏广告-广告弹窗",
-          "rules": [
-            {
-              "key": 0,
-              "name": "美团买菜-折扣弹窗",
-              "activityIds": "com.meituan.retail.c.android.mrn.mrn.MallMrnModal",
-              "matches": "ViewGroup > ViewGroup[childCount=6] > ViewGroup[childCount=1] > ImageView[childCount=0][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/import/12639717"
-            },
-            {
-              "key": 1,
-              "name": "美团买菜-红包弹窗",
-              "activityIds": "com.meituan.retail.c.android.mrn.mrn.MallMrnModal",
-              "matches": "@ImageView < ViewGroup +3 ViewGroup > ViewGroup > TextView[text^=\"红包已到账\"]",
-              "snapshotUrls": "https://i.gkd.li/import/12892626"
-            },
-            {
-              "key": 2,
-              "name": "美团买菜-支付成功后-红包弹窗",
-              "activityIds": "com.meituan.retail.c.android.mrn.mrn.MallMrnModal",
-              "matches": "TextView[text=\"恭喜你获得以下权益\"] + ViewGroup > ImageView",
-              "snapshotUrls": "https://i.gkd.li/import/12646768"
-            },
-            {
-              "key": 3,
-              "name": "超市便利-广告弹窗",
-              "activityIds": "com.sankuai.waimai.store.poi.list.newp.PoiVerticalityHomeActivity",
-              "matches": "FrameLayout[childCount=2] > FrameLayout + FrameLayout[childCount=1] > ImageView[childCount=0][clickable=true]",
-              "snapshotUrls": "https://i.gkd.li/import/13694877"
-            },
-            {
-              "key": 4,
-              "name": "骑行卡-红包弹窗",
-              "activityIds": "com.meituan.mmp.lib.HeraActivity",
-              "matches": "View[childCount=3] > View + TextView + TextView[text=\"\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/import/12739204"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 111,
-          "name": "全屏广告-订单调查弹窗",
-          "matchTime": 10000,
-          "actionMaximum": 1,
-          "fastQuery": true,
-          "rules": [
-            {
-              "name": "我的页面-小调查",
-              "action": "back",
-              "activityIds": "com.meituan.retail.c.android.mrn.mrn.MallMrnModal",
-              "matches": "TextView[text=\"小调查\"]",
-              "snapshotUrls": "https://i.gkd.li/import/12639723"
-            },
-            {
-              "name": "订单详情页匿名调查",
-              "action": "back",
-              "activityIds": "com.sankuai.waimai.bussiness.order.detail.WMOrderDetailActivity",
-              "matches": "[id=\"com.sankuai.meituan:id/questionnaireTitle\"]",
-              "snapshotUrls": "https://i.gkd.li/import/13682336"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 112,
-          "name": "局部广告-首页右侧抽奖小广告",
-          "activityIds": [
-            "com.meituan.android.pt.homepage.activity.MainActivity",
-            "com.miui.home.launcher.Launcher"
-          ],
-          "rules": "FrameLayout > @ImageView + ImageView[desc=\"资质与规则\"]",
-          "snapshotUrls": [
-            "https://i.gkd.li/import/12639815",
-            "https://i.gkd.li/import/12639734"
-          ],
-          "enable": false
-        },
-        {
-          "enable": false,
-          "key": 113,
-          "name": "全屏广告-请求定位弹窗",
-          "desc": "首页/外卖界面-【打开位置开关弹窗】-点击右侧x关闭",
-          "activityIds": [
-            "com.meituan.android.pt.homepage.activity.MainActivity",
-            "com.sankuai.waimai.business.page.homepage.TakeoutActivity"
-          ],
-          "rules": [
-            "[id =\"com.sankuai.meituan:id/location_close\"]",
-            "[id =\"com.sankuai.meituan:id/location_layer_close\"]"
-          ],
-          "snapshotUrls": [
-            "https://i.gkd.li/import/12874657",
-            "https://i.gkd.li/import/12910210",
-            "https://i.gkd.li/import/12910211"
-          ]
-        },
-        {
           "enable": false,
           "key": 114,
           "name": "全屏广告-请求开启通知权限弹窗",
@@ -1119,33 +544,6 @@
               "snapshotUrls": "https://i.gkd.li/import/13439134"
             }
           ]
-        },
-        {
-          "key": 115,
-          "name": "全屏广告-订单完成后的红包弹窗",
-          "desc": "直接关闭整个模块",
-          "fastQuery": true,
-          "matchTime": 10000,
-          "actionMaximum": 1,
-          "rules": [
-            {
-              "action": "back",
-              "activityIds": "com.sankuai.waimai.bussiness.order.detail.WMOrderDetailActivity",
-              "matches": "[id=\"com.sankuai.meituan:id/module_container\"]",
-              "snapshotUrls": "https://i.gkd.li/import/13695703"
-            }
-          ],
-          "enable": false
-        },
-        {
-          "key": 116,
-          "name": "全屏广告-新人返场特惠",
-          "desc": "点击右上角返回",
-          "activityIds": "com.meituan.android.base.knb.KNBWebViewActivity",
-          "matchTime": 10000,
-          "rules": "[id=\"shareNav\"] > [text=\"\"]",
-          "snapshotUrls": "https://i.gkd.li/import/13800691",
-          "enable": false
         },
         {
           "key": 117,
