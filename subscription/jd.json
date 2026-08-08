@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 27,
+  "version": 28,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -92,12 +92,12 @@
               "actionCd": 8000,
               "swipeArg": {
                 "start": {
-                  "left": "width * 0.556",
-                  "top": "height * 1.847"
+                  "x": 1240,
+                  "y": 1050
                 },
                 "end": {
-                  "left": "width * 0.989",
-                  "top": "height * 1.847"
+                  "x": 1435,
+                  "y": 1050
                 },
                 "duration": 1100
               },
