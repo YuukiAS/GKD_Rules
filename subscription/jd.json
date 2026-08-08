@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 29,
+  "version": 30,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -79,9 +79,9 @@
           "matchRoot": true,
           "order": -10,
           "matchDelay": 3500,
-          "matchTime": 20000,
+          "matchTime": 90000,
           "resetMatch": "match",
-          "actionMaximum": 1,
+          "actionMaximum": 3,
           "activityIds": [
             "com.jd.lib.productdetail.ProductDetailActivity",
             ".lib.productdetail.ProductDetailActivity"
@@ -107,6 +107,29 @@
               ],
               "excludeMatches": [
                 "[vid=\"lib_pd_mainimage_try_read_icon\"][visibleToUser=true][left > 900 && top > 1000 && right < 1420 && width > 250 && height > 80]"
+              ]
+            },
+            {
+              "key": 2,
+              "action": "swipe",
+              "actionCd": 12000,
+              "swipeArg": {
+                "start": {
+                  "x": "screenWidth * 0.8611",
+                  "y": "screenHeight * 0.3314"
+                },
+                "end": {
+                  "x": "screenWidth * 0.9965",
+                  "y": "screenHeight * 0.3314"
+                },
+                "duration": 1100
+              },
+              "matchTime": 90000,
+              "actionMaximum": 3,
+              "matches": [
+                "[text*=\"MUJI共聚酯 吸管随行杯\"][visibleToUser=true]",
+                "[text=\"加入购物车\"][visibleToUser=true]",
+                "[text=\"立即购买\"][visibleToUser=true]"
               ]
             }
           ]
