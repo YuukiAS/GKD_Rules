@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 35,
+  "version": 36,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -74,7 +74,7 @@
           "key": 3,
           "name": "JD product visual live overlay dock right",
           "desc": "Dock the visual-only product-page live explanation overlay by dragging from the dialog's right half to outside the screen. JD can re-expand the dialog on the same product page without changing the accessible tree, so this does not tap the visual X.",
-          "enable": false,
+          "enable": true,
           "fastQuery": true,
           "matchRoot": true,
           "order": -10,
