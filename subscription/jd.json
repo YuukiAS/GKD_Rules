@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 30,
+  "version": 31,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -73,15 +73,15 @@
         {
           "key": 3,
           "name": "JD product visual live overlay dock right",
-          "desc": "Dock the visual-only product-page live explanation overlay with one right swipe. JD does not expose its close controls to the accessibility tree, so this is constrained to label-only product detail pages and excludes try-icon false-positive shapes.",
+          "desc": "Dock the visual-only product-page live explanation overlay with right swipes. JD can re-expand the dialog on the same product page without changing the accessible tree, so this keeps a bounded retry window instead of tapping the visual X.",
           "enable": true,
           "fastQuery": true,
           "matchRoot": true,
           "order": -10,
           "matchDelay": 3500,
-          "matchTime": 90000,
+          "matchTime": 600000,
           "resetMatch": "match",
-          "actionMaximum": 3,
+          "actionMaximum": 20,
           "activityIds": [
             "com.jd.lib.productdetail.ProductDetailActivity",
             ".lib.productdetail.ProductDetailActivity"
@@ -124,8 +124,8 @@
                 },
                 "duration": 1100
               },
-              "matchTime": 90000,
-              "actionMaximum": 3,
+              "matchTime": 600000,
+              "actionMaximum": 20,
               "matches": [
                 "[text*=\"MUJI共聚酯 吸管随行杯\"][visibleToUser=true]",
                 "[text=\"加入购物车\"][visibleToUser=true]",
