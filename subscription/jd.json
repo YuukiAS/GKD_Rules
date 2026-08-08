@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 24,
+  "version": 25,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -63,6 +63,45 @@
               },
               "matches": [
                 "[vid=\"lib_pd_mainimage_label\"][visibleToUser=true][left > 900 && top > 250 && top < 650 && right >= 1400 && width > 250 && height > 180]"
+              ],
+              "excludeMatches": [
+                "[vid=\"lib_pd_mainimage_try_read_icon\"][visibleToUser=true][left > 900 && top > 1000 && right < 1420 && width > 250 && height > 80]"
+              ]
+            }
+          ]
+        },
+        {
+          "key": 3,
+          "name": "JD product visual live overlay dock right",
+          "desc": "Dock the visual-only product-page live explanation overlay with one right swipe. JD does not expose its close controls to the accessibility tree, so this is constrained to label-only product detail pages and excludes try-icon false-positive shapes.",
+          "enable": true,
+          "fastQuery": true,
+          "matchDelay": 3500,
+          "matchTime": 20000,
+          "resetMatch": "activity",
+          "actionMaximum": 1,
+          "activityIds": [
+            "com.jd.lib.productdetail.ProductDetailActivity",
+            ".lib.productdetail.ProductDetailActivity"
+          ],
+          "rules": [
+            {
+              "key": 1,
+              "action": "swipe",
+              "actionCd": 8000,
+              "swipeArg": {
+                "start": {
+                  "x": "screenWidth * 0.861",
+                  "y": "screenHeight * 0.331"
+                },
+                "end": {
+                  "x": "screenWidth - 5",
+                  "y": "screenHeight * 0.331"
+                },
+                "duration": 1100
+              },
+              "matches": [
+                "[vid=\"lib_pd_mainimage_label\"][visibleToUser=true][left > 900 && top > 250 && top < 800 && right >= 1400 && width > 250 && height > 180]"
               ],
               "excludeMatches": [
                 "[vid=\"lib_pd_mainimage_try_read_icon\"][visibleToUser=true][left > 900 && top > 1000 && right < 1420 && width > 250 && height > 80]"
