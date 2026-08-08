@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 25,
+  "version": 26,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -76,6 +76,7 @@
           "desc": "Dock the visual-only product-page live explanation overlay with one right swipe. JD does not expose its close controls to the accessibility tree, so this is constrained to label-only product detail pages and excludes try-icon false-positive shapes.",
           "enable": true,
           "fastQuery": true,
+          "order": -10,
           "matchDelay": 3500,
           "matchTime": 20000,
           "resetMatch": "activity",
@@ -91,12 +92,12 @@
               "actionCd": 8000,
               "swipeArg": {
                 "start": {
-                  "x": "screenWidth * 0.861",
-                  "y": "screenHeight * 0.331"
+                  "left": "width * 0.556",
+                  "top": "height * 1.847"
                 },
                 "end": {
-                  "x": "screenWidth - 5",
-                  "y": "screenHeight * 0.331"
+                  "left": "width * 0.989",
+                  "top": "height * 1.847"
                 },
                 "duration": 1100
               },
