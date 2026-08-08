@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 26,
+  "version": 27,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -43,7 +43,7 @@
           "key": 2,
           "name": "JD product floating video label-only",
           "desc": "Close the product-page floating video when only the right-top floating label is exposed; pages that also expose a try-icon are ignored.",
-          "enable": true,
+          "enable": false,
           "fastQuery": true,
           "matchDelay": 2000,
           "matchTime": 15000,
@@ -79,7 +79,7 @@
           "order": -10,
           "matchDelay": 3500,
           "matchTime": 20000,
-          "resetMatch": "activity",
+          "resetMatch": "match",
           "actionMaximum": 1,
           "activityIds": [
             "com.jd.lib.productdetail.ProductDetailActivity",
