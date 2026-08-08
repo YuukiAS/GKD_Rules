@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 31,
+  "version": 32,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -73,7 +73,7 @@
         {
           "key": 3,
           "name": "JD product visual live overlay dock right",
-          "desc": "Dock the visual-only product-page live explanation overlay with right swipes. JD can re-expand the dialog on the same product page without changing the accessible tree, so this keeps a bounded retry window instead of tapping the visual X.",
+          "desc": "Dock the visual-only product-page live explanation overlay with a long right drag from the dialog body to outside the screen. JD can re-expand the dialog on the same product page without changing the accessible tree, so this avoids short edge flicks and does not tap the visual X.",
           "enable": true,
           "fastQuery": true,
           "matchRoot": true,
@@ -93,14 +93,14 @@
               "actionCd": 8000,
               "swipeArg": {
                 "start": {
-                  "x": "screenWidth * 0.8611",
+                  "x": "screenWidth * 0.7292",
                   "y": "screenHeight * 0.3314"
                 },
                 "end": {
-                  "x": "screenWidth * 0.9965",
+                  "x": "screenWidth * 1.25",
                   "y": "screenHeight * 0.3314"
                 },
-                "duration": 1100
+                "duration": 1600
               },
               "matches": [
                 "[vid=\"lib_pd_mainimage_label\"][visibleToUser=true][left > 900 && top > 250 && top < 800 && right >= 1400 && width > 250 && height > 180]"
@@ -115,14 +115,14 @@
               "actionCd": 12000,
               "swipeArg": {
                 "start": {
-                  "x": "screenWidth * 0.8611",
+                  "x": "screenWidth * 0.7292",
                   "y": "screenHeight * 0.3314"
                 },
                 "end": {
-                  "x": "screenWidth * 0.9965",
+                  "x": "screenWidth * 1.25",
                   "y": "screenHeight * 0.3314"
                 },
-                "duration": 1100
+                "duration": 1600
               },
               "matchTime": 600000,
               "actionMaximum": 20,
