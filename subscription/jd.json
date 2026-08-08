@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 23,
+  "version": 24,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -1424,11 +1424,10 @@
         {
           "key": 214,
           "name": "局部广告-商品详情页直播悬浮窗",
-          "desc": "点击关闭商品详情页直播悬浮窗；新版天猫超市推荐流直播卡不暴露关闭节点，先展开再按锚点偏移关闭。",
+          "desc": "点击关闭商品详情页直播悬浮窗；仅点击可访问树中暴露的关闭节点，避免误触直播入口或商品卡。",
           "fastQuery": true,
-          "matchDelay": 800,
           "matchTime": 10000,
-          "actionMaximum": 2,
+          "actionMaximum": 1,
           "resetMatch": "activity",
           "rules": [
             {
@@ -1446,31 +1445,10 @@
             },
             {
               "key": 1,
-              "name": "天猫超市推荐流直播卡-展开",
+              "name": "天猫超市商品详情直播浮窗-关闭按钮",
               "matches": [
                 "[vid=\"taodetail_nav_bar_tab_text\"][text=\"推荐\"][desc*=\"已选中\"][visibleToUser=true]",
-                "@FrameLayout[clickable=true][visibleToUser=true][left>1180 && top>500 && right>1350 && bottom<900] > FrameLayout > View[desc=\"直播中\"][visibleToUser=true]"
-              ],
-              "activityIds": [
-                "com.taobao.android.detail.wrapper.activity.DetailActivity"
-              ],
-              "actionMaximum": 1,
-              "resetMatch": "activity"
-            },
-            {
-              "key": 2,
-              "name": "天猫超市推荐流直播卡-关闭",
-              "preKeys": [
-                1
-              ],
-              "actionCd": 3500,
-              "position": {
-                "left": "85",
-                "top": "1509"
-              },
-              "matches": [
-                "[vid=\"taodetail_nav_bar_tab_text\"][text=\"推荐\"][desc*=\"已选中\"][visibleToUser=true]",
-                "@FrameLayout[clickable=true][visibleToUser=true][left>1180 && top>500 && right>1350 && bottom<900] > FrameLayout > View[desc=\"直播中\"][visibleToUser=true]"
+                "@[clickable=true][visibleToUser=true][desc=\"关闭\" || desc=\"关闭按钮\" || text=\"关闭\" || text=\"×\" || text=\"X\"] <<n [vid=\"bottom_right_linear\"]"
               ],
               "activityIds": [
                 "com.taobao.android.detail.wrapper.activity.DetailActivity"
