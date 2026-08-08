@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 39,
+  "version": 40,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -79,9 +79,11 @@
           "matchRoot": true,
           "order": -10,
           "matchDelay": 3500,
-          "matchTime": 180000,
-          "resetMatch": "match",
-          "actionMaximum": 6,
+          "matchTime": 60000,
+          "resetMatch": "app",
+          "forcedTime": 15000,
+          "priorityTime": 15000,
+          "actionMaximum": 2,
           "activityIds": [
             "com.jd.lib.productdetail.ProductDetailActivity",
             ".lib.productdetail.ProductDetailActivity"
@@ -124,8 +126,8 @@
                 },
                 "duration": 6500
               },
-              "matchTime": 180000,
-              "actionMaximum": 6,
+              "matchTime": 60000,
+              "actionMaximum": 2,
               "matches": [
                 "[vid=\"lib_pd_mainimage_label\"][visibleToUser=true][left > 900 && top > 250 && top < 800 && right >= 1400 && width > 250 && height > 180]",
                 "[vid=\"pd_topimage_playbuttonimage\"][visibleToUser=true][top > 600 && top < 1200]",
