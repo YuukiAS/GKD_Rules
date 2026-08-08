@@ -1,7 +1,7 @@
 {
   "id": 910719,
   "name": "YuukiAS的GKD订阅",
-  "version": 22,
+  "version": 23,
   "author": "YuukiAS",
   "updateUrl": "https://raw.githubusercontent.com/YuukiAS/GKD_Rules/main/subscription/jd.json",
   "globalGroups": [],
@@ -1424,9 +1424,15 @@
         {
           "key": 214,
           "name": "局部广告-商品详情页直播悬浮窗",
-          "desc": "点击关闭",
+          "desc": "点击关闭商品详情页直播悬浮窗；新版天猫超市推荐流直播卡不暴露关闭节点，先展开再按锚点偏移关闭。",
+          "fastQuery": true,
+          "matchDelay": 800,
+          "matchTime": 10000,
+          "actionMaximum": 2,
+          "resetMatch": "activity",
           "rules": [
             {
+              "key": 0,
               "matches": [
                 "[vid=\"view_close\"]"
               ],
@@ -1437,6 +1443,40 @@
               "fastQuery": true,
               "matchTime": 10000,
               "actionMaximum": 1
+            },
+            {
+              "key": 1,
+              "name": "天猫超市推荐流直播卡-展开",
+              "matches": [
+                "[vid=\"taodetail_nav_bar_tab_text\"][text=\"推荐\"][desc*=\"已选中\"][visibleToUser=true]",
+                "@FrameLayout[clickable=true][visibleToUser=true][left>1180 && top>500 && right>1350 && bottom<900] > FrameLayout > View[desc=\"直播中\"][visibleToUser=true]"
+              ],
+              "activityIds": [
+                "com.taobao.android.detail.wrapper.activity.DetailActivity"
+              ],
+              "actionMaximum": 1,
+              "resetMatch": "activity"
+            },
+            {
+              "key": 2,
+              "name": "天猫超市推荐流直播卡-关闭",
+              "preKeys": [
+                1
+              ],
+              "actionCd": 3500,
+              "position": {
+                "left": "85",
+                "top": "1509"
+              },
+              "matches": [
+                "[vid=\"taodetail_nav_bar_tab_text\"][text=\"推荐\"][desc*=\"已选中\"][visibleToUser=true]",
+                "@FrameLayout[clickable=true][visibleToUser=true][left>1180 && top>500 && right>1350 && bottom<900] > FrameLayout > View[desc=\"直播中\"][visibleToUser=true]"
+              ],
+              "activityIds": [
+                "com.taobao.android.detail.wrapper.activity.DetailActivity"
+              ],
+              "actionMaximum": 1,
+              "resetMatch": "activity"
             }
           ],
           "enable": true
